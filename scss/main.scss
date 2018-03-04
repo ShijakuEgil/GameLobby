@@ -1,0 +1,151 @@
+// @import "bootstrap/functions";
+// @import "bootstrap/variables";
+// @import "bootstrap/mixins";
+// @import "bootstrap/root";
+// @import "bootstrap/reboot";
+// @import "bootstrap/type";
+// @import "bootstrap/images";
+// @import "bootstrap/code";
+// @import "bootstrap/grid";
+// @import "bootstrap/tables";
+// @import "bootstrap/forms";
+// @import "bootstrap/buttons";
+// @import "bootstrap/transitions";
+// @import "bootstrap/dropdown";
+// @import "bootstrap/button-group";
+// @import "bootstrap/input-group";
+// @import "bootstrap/custom-forms";
+// @import "bootstrap/nav";
+// @import "bootstrap/navbar";
+// @import "bootstrap/card";
+// @import "bootstrap/breadcrumb";
+// @import "bootstrap/pagination";
+// @import "bootstrap/badge";
+// @import "bootstrap/jumbotron";
+// @import "bootstrap/alert";
+// @import "bootstrap/progress";
+// @import "bootstrap/media";
+// @import "bootstrap/list-group";
+// @import "bootstrap/close";
+// @import "bootstrap/modal";
+// @import "bootstrap/tooltip";
+// @import "bootstrap/popover";
+// @import "bootstrap/carousel";
+// @import "bootstrap/utilities";
+// @import "bootstrap/print";
+/*
+SIGN-IN FORM PAGE
+*/
+body {
+  height: 100%;
+}
+footer{
+  text-align: center;
+}
+.form-signin {
+  text-align: center;
+  width: 100%;
+  max-width: 430px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-new-user{
+  text-align: center;
+  width: 100%;
+  max-width: 430px;
+  padding:0 15px;
+  margin: 0 auto;
+}
+.logo-box{
+  margin-top: 2rem;
+  .icon{
+    font-size: 5vw;
+  }
+  h1{
+    font-size: 3vw;
+  }
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="text"]{
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  &.login{
+    margin-bottom:-1px;
+    border-radius: 0;
+  }
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+//NAVBAR styles
+
+.navbar{
+  padding:0 0 !important;
+  .nav-logo{
+    position:relative;
+    // margin:0 3rem;
+    text-align: center;
+    .icon{
+      font-size:40px;
+    }
+      h6{
+        font-size: 30px;
+    }
+  }
+  .user-thumbnail{
+    position:absolute;
+    right:0;
+    h3{
+      font-size:30px;
+    }
+    .icon{
+      font-size: 30px;
+    }
+    .btn{
+      padding: 0 10px;
+    }
+  }
+}
+//lOBBY STYLING
+
+// .lobby-box{
+//   background-color: white;
+//   height: 70vh;
+// }
+// .chat-container{
+//   background-color: black;
+//   width:50%;
+//   margin:30px;
+//   #chat-wrap{
+//     border:0px solid #eee;
+//     margin: 0 0 15px 0;
+//   }
+//   #chat-area{
+//     height: 300px;
+//     overflow: auto;
+//     border: 0px solid #666;
+//     padding: 20px;
+//     background: whitesmoke;
+//   }
+// }
