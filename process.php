@@ -27,22 +27,23 @@
         		 else{
         			 $text= array();
         			 $log['state'] = $state + count($lines) - $state;
-        			 foreach ($lines as $line_num => $line)
-                       {
+        			 foreach ($lines as $line_num => $line){
+
         				   if($line_num >= $state){
+
                          $text[] =  $line = str_replace("\n", "", $line);
         				   }
 
-                        }
+                }
         			 $log['text'] = $text;
         		 }
 
              break;
 
     	 case('send'):
-		  $nickname = htmlentities(strip_tags($_POST['nickname']));
-			 $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
-			  $message = htmlentities(strip_tags($_POST['message']));
+		     $nickname = htmlentities(strip_tags($_POST['nickname']));
+			      $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
+			         $message = htmlentities(strip_tags($_POST['message']));
 		 if(($message) != "\n"){
 
 			 if(preg_match($reg_exUrl, $message, $url)) {
@@ -54,8 +55,11 @@
 		 }
         	 break;
 
-    }
-
+      case('join'):
+      $username = $_POST['nickname'];
+      fwrite(fopen('chat.txt', 'a'), '<small class="text-info">'.$username.' has joined the lobby.</small>');
+      break;
+  }
     echo json_encode($log);
 
 ?>

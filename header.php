@@ -1,9 +1,10 @@
 <?php
     require_once('functions/styles-scripts.php');
     require_once('functions/db_connection.php');
-    require_once('functions/db_functions.php');
+    // require_once('functions/db_functions.php');
+    require_once('functions/database_functions.php');
     require_once('functions/validateUserInfo.php');
-    session_start();
+
  ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

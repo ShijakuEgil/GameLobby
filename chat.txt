@@ -1,5 +1,32 @@
-<span>Egi</span>hey 
-<span>Egi</span>yes 
-<span>Egi</span>i am here  
-<span>Egi</span>egi 
-<span>Egi</span>sdjhfs 
+<span>username1</span>a,sjhdna 
+<span>username1</span>zknd 
+<span>username1</span>z.x,mzcS 
+<span>username1</span>.zkxmnzmZZ 
+<span>username1</span>lcjnzlxkc 
+<span>username1</span>.zkmdxZ 
+<span>username1has joined the lobby.</span><span>username1</span>kjshadd 
+<span>username1</span>,ansda 
+<span>username1</span>a,sjbnda 
+<span>username1</span>jasnd 
+<span>username1</span>kjjna 
+<span>username1</span>kjnas 
+<span>username1has joined the lobby.</span><span>username2has joined the lobby.</span><span>username2</span>aksnda 
+<span>username2</span>,ajshdjas 
+<span>username2has joined the lobby.</span><small class="text-success">username2has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><span>username2</span>a.slmda 
+<small class="text-success">username2 has joined the lobby.</small><small class="text-success">username1 has joined the lobby.</small><span>username1</span>asd 
+<small class="text-success">username1 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username2 has joined the lobby.</small><small class="text-success">username1 has joined the lobby.</small><small class="text-success">username1 has joined the lobby.</small><small class="text-success">
+Notice:  Undefined index: username in C:\xampp\htdocs\GameLobby\functions\styles-scripts.php on line 56
+ has joined the lobby.</small><small class="text-primary">username1 has joined the lobby.</small><small class="text-primary">username1 has joined the lobby.</small><small class="text-primary">username1 has joined the lobby.</small><small class="text-primary">username1 has joined the lobby.</small><small class="text-primary">username1 has joined the lobby.</small><small class="text-primary">username1 has joined the lobby.</small><small class="text-primary">username1 has joined the lobby.</small><span>username1</span>kajsad 
+<span>username1</span>lkasmdkam 
+<span>username1</span>ldkjajskd 
+<span>username1</span>kd jna 
+<span>username1</span>kjsalhhsd 
+<small class="text-primary">username1 has joined the lobby.</small><span>username1</span>,kjnSda 
+<span>username1</span>LJZ 
+<small class="text-primary">username1 has joined the lobby.</small><span>username1</span>,asnda 
+<span>username1</span>.a.ksndka 
+<span>username1</span>,ajsnla 
+<small class="text-primary">username1 has joined the lobby.</small><small class="text-info">username1 has joined the lobby.</small><small class="text-info">username1 has joined the lobby.</small><small class="text-info">username1 has joined the lobby.</small><small class="text-info">username1 has joined the lobby.</small><span>username1</span>;lkjk;l 
+<span>username1</span>l 
+<span>username1</span>mn 
+<small class="text-info">username2 has joined the lobby.</small>

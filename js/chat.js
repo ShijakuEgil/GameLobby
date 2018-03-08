@@ -2,11 +2,13 @@ var instanse = false;
 var state;
 var mes;
 var file;
+var firstTime = true;
 
 function Chat() {
     this.update = updateChat;
     this.send = sendChat;
     this.getState = getStateOfChat;
+    this.join = notifyChat;
 }
 
 //gets the state of the chat
@@ -71,4 +73,23 @@ function sendChat(message, nickname)
 			   updateChat();
 		   },
 		});
+}
+
+// notify other users that you have joined the lobby
+function notifyChat(username){
+  updateChat();
+  $.ajax({
+    type: 'POST',
+    url:  'process.php',
+    data: {
+                      'function': 'join',
+                      'nickname': username,
+                      'file': file,
+
+    },
+    dataType: 'json',
+    success: function(data){
+      updateChat();
+    },
+  });
 }

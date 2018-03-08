@@ -104,7 +104,6 @@ footer{
   padding:0 0 !important;
   .nav-logo{
     position:relative;
-    // margin:0 3rem;
     text-align: center;
     .icon{
       font-size:40px;
@@ -127,25 +126,9 @@ footer{
     }
   }
 }
-//lOBBY STYLING
 
-// .lobby-box{
-//   background-color: white;
-//   height: 70vh;
-// }
-// .chat-container{
-//   background-color: black;
-//   width:50%;
-//   margin:30px;
-//   #chat-wrap{
-//     border:0px solid #eee;
-//     margin: 0 0 15px 0;
-//   }
-//   #chat-area{
-//     height: 300px;
-//     overflow: auto;
-//     border: 0px solid #666;
-//     padding: 20px;
-//     background: whitesmoke;
-//   }
-// }
+//CHAT AREA LOBBY
+
+#name-area{
+  color:white;
+}

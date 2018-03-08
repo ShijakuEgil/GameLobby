@@ -12,15 +12,19 @@ function get_header(){
 <?php
 }
 
+
 function get_footer(){
   ?>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+  <script type="text/javascript" src="js/scripts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <?php
 }
 
-function get_navbar(){?>
+
+function get_navbar(){
+  ?>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
       <div class="container-fluid mx-5 position-relative">
@@ -39,12 +43,9 @@ function get_navbar(){?>
                 <i class="icon ion-android-person text-success"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <form class="" action="index.html" method="post">
-                  <a class="dropdown-item" type="submit" name="logout"href="index.php">logOut</a>
+                  <a id="logout-btn"class="dropdown-item"name="logout" href="logout.php">logOut</a>
                   <a class="dropdown-item" href="#">Another action</a>
                   <a class="dropdown-item" href="#">Something else here</a>
-                </form>
-
               </div>
             </span>
          </h3>
@@ -52,6 +53,7 @@ function get_navbar(){?>
        </div>
      </div>
    </nav>
+   <p id="username-text" hidden><?php echo $_SESSION['username']; ?></p>
   </header>
 <?php
 }

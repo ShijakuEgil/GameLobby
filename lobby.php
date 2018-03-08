@@ -1,34 +1,32 @@
-<?php include('header.php'); ?>
-<body onload="setInterval('chat.update()', 1000)">
-<?php get_navbar(); ?>
-<script type="text/javascript">
+<?php
+session_start();
+include('header.php');?>
 
+<body onload="setInterval('chat.update()', 1000)">
+
+<?php get_navbar(); //display the navbar after login?>
+
+<script type="text/javascript">
     // ask user for name with popup prompt
     // var name = prompt("Enter your chat name:", "Guest");
-    var name = 'Egi';
-
-    // default name is 'Guest'
-  if (!name || name === ' ') {
-     name = "Guest";
-  }
-
+    var name = $('#username-text').text();
+    // alert('check1');
   // strip tags
   name = name.replace(/(<([^>]+)>)/ig,"");
 
   // display name on page
-  $("#name-area").html("You are: <span>" + name + "</span>");
+  $("#name-area").html("<span>" + name + "</span>");
 
   // kick off chat
     var chat =  new Chat();
-  $(function() {
+  $(function(){
 
      chat.getState();
-
+     // alert('check2');
      // watch textarea for key presses
          $("#sendie").keydown(function(event) {
 
              var key = event.which;
-
              //all keys including return.
              if (key >= 33) {
 
@@ -40,7 +38,7 @@
                      event.preventDefault();
                  }
               }
-                                                                                                    });
+          });
      // watch textarea for release of key press
      $('#sendie').keyup(function(e) {
 
@@ -59,12 +57,15 @@
                 } else {
 
           $(this).val(text.substring(0, maxLength));
-
         }
-
-
-        }
+      }
          });
+  });
+
+  jQuery(document).ready(function($){
+    var username = $('#username-text').text();
+    chat.join(username);
+
 
   });
 </script>
@@ -80,7 +81,11 @@
 
         <p id="name-area"></p>
 
-        <div id="chat-wrap"><div id="chat-area"></div></div>
+        <div id="chat-wrap">
+          <div id="chat-area">
+
+          </div>
+        </div>
 
         <form id="send-message-area">
             <p>Your message: </p>

@@ -37,6 +37,7 @@ function db_logOut_user($username){
   $statement2->bindValue(':user', $username);
   $statement2->execute();
   $statement2->closeCursor();
+  header("Location:index.php");
 }
 
 //Register function:

@@ -2,7 +2,8 @@
     // Following John Baugh's template from handout for connecting to db
     // according to following link I can use the PDO like mysql even though its mariadb
     // https://stackoverflow.com/questions/16195013/pdo-and-mariadb
-    $db_dataSourceName = 'mysql:host=localhost;dbname=gamelobbydb'; // replace w/ your own
+    // $db_dataSourceName = 'mysql:host=localhost;dbname=gamelobbydb'; // game lobby DB
+    $db_dataSourceName = 'mysql:host=localhost;dbname=globbydb';
     $db_username = 'root'; //replace w/ your own
     $db_password = ''; // replace w/ your own
     $db_dbErrorMsg = ""; // Echo this out if your having problems, might give hint as to whats wrong

@@ -1,12 +1,15 @@
 <?php
+
 /*
     @author Egil Shijaku
     Theme: GameLobby
 */
-  include('header.php');
-  ?>
+session_start();
+  include('header.php');//includes the header files
 
-  <?php
+  if(isset($_SESSION['status'])){
+    header('Location:lobby.php');
+  }
   $is_authenticated = false;
   $errorMsgUser = '';
   $errorMsgPass = '';
@@ -18,13 +21,16 @@
     if(isset($_POST['signin'])){
       $username = filter_input(INPUT_POST, 'username');
       $password = filter_input(INPUT_POST, 'password');
-         // Name and Password can be check against DB
-      $isAuthenticated = authenticateAccount($username, $password);
+      // Name and Password can be check against DB
+      // $isAuthenticated = authenticateAccount($username, $password);
+      $isAuthenticated = verify_user($username, $password);
          // If they are a valid user, take them to Lobby
       if($isAuthenticated){
-             // http://php.net/manual/en/function.header.php
+        // http://php.net/manual/en/function.header.php
+
         $_SESSION['username'] = $username;
-        header("Location:lobby.php");
+        $_SESSION['status'] = 'logged in';
+        header("Location:lobby.php");//display the lobby.php page after user is Authenticated
              exit();
          }
       else{
@@ -40,7 +46,8 @@
             && validate_password($password, $errorMsgPass)
             && validate_email($email, $errorMsgEmail)){
               //Name and Password can be check against DB
-              $isRegistered = addUser($username, $password, $email);
+              // $isRegistered = addUser($username, $password, $email);
+              $isRegistered = add_user($username, $password, $email);
 
               if($isRegistered){
                   $feedBackMsg = '<p class="text-success">
@@ -93,9 +100,6 @@ endif; // If not submitting, or if submission in error, then display page
       <?php endif; ?>
 
       <?php echo $errorNoAccount;
-            // echo $errorMsgUser;
-            // echo $errorMsgPass;
-            // echo $errorMsgEmail;
             echo $feedBackMsg;
       ?>
    </form>
