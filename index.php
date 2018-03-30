@@ -1,10 +1,8 @@
 <?php
-
 /*
     @author Egil Shijaku
     Theme: GameLobby
 */
-session_start();
   include('header.php');//includes the header files
 
   if(isset($_SESSION['status'])){
@@ -27,9 +25,8 @@ session_start();
          // If they are a valid user, take them to Lobby
       if($isAuthenticated){
         // http://php.net/manual/en/function.header.php
-
-        $_SESSION['username'] = $username;
-        $_SESSION['status'] = 'logged in';
+        set_user_status('T',$username);
+        set_variables($username);
         header("Location:lobby.php");//display the lobby.php page after user is Authenticated
              exit();
          }
@@ -42,7 +39,7 @@ session_start();
          $username = filter_input(INPUT_POST, 'username');
          $password = filter_input(INPUT_POST, 'password');
          $email = filter_input(INPUT_POST, 'email');
-         if(validate_username($username, $errorMsgUser)
+         if( validate_username($username, $errorMsgUser)
             && validate_password($password, $errorMsgPass)
             && validate_email($email, $errorMsgEmail)){
               //Name and Password can be check against DB
@@ -59,8 +56,6 @@ session_start();
               }
             }
        }
-       ?>
- <?php
 endif; // If not submitting, or if submission in error, then display page
   ?>
   <body>
@@ -103,5 +98,4 @@ endif; // If not submitting, or if submission in error, then display page
             echo $feedBackMsg;
       ?>
    </form>
-
 <?php include('footer.php'); ?>

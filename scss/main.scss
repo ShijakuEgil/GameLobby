@@ -1,38 +1,3 @@
-// @import "bootstrap/functions";
-// @import "bootstrap/variables";
-// @import "bootstrap/mixins";
-// @import "bootstrap/root";
-// @import "bootstrap/reboot";
-// @import "bootstrap/type";
-// @import "bootstrap/images";
-// @import "bootstrap/code";
-// @import "bootstrap/grid";
-// @import "bootstrap/tables";
-// @import "bootstrap/forms";
-// @import "bootstrap/buttons";
-// @import "bootstrap/transitions";
-// @import "bootstrap/dropdown";
-// @import "bootstrap/button-group";
-// @import "bootstrap/input-group";
-// @import "bootstrap/custom-forms";
-// @import "bootstrap/nav";
-// @import "bootstrap/navbar";
-// @import "bootstrap/card";
-// @import "bootstrap/breadcrumb";
-// @import "bootstrap/pagination";
-// @import "bootstrap/badge";
-// @import "bootstrap/jumbotron";
-// @import "bootstrap/alert";
-// @import "bootstrap/progress";
-// @import "bootstrap/media";
-// @import "bootstrap/list-group";
-// @import "bootstrap/close";
-// @import "bootstrap/modal";
-// @import "bootstrap/tooltip";
-// @import "bootstrap/popover";
-// @import "bootstrap/carousel";
-// @import "bootstrap/utilities";
-// @import "bootstrap/print";
 /*
 SIGN-IN FORM PAGE
 */
@@ -75,6 +40,7 @@ footer{
   padding: 10px;
   font-size: 16px;
 }
+
 .form-signin .form-control:focus {
   z-index: 2;
 }
@@ -99,7 +65,6 @@ footer{
 }
 
 //NAVBAR styles
-
 .navbar{
   padding:0 0 !important;
   .nav-logo{
@@ -128,7 +93,123 @@ footer{
 }
 
 //CHAT AREA LOBBY
+h2{
+    color: #1e1d1d;
+    /* font: 30px Helvetica, Sans-Serif; */
+    /* margin: 0 0 10px 0; */
+}
+.games-list,
+.players-list{
+  // margin:30px;
+  padding:20px 20px;
+  text-align: center;
+  .inner-container{
+    background-color: whitesmoke;
+    margin:0 auto;
+    width:85%;
+    height: 800px;
+  }
+  .title{
+    padding:10px;
+    border-bottom: 2px solid white;
+    color: black;
+  }
+}
+#page-wrap{
+    margin: 30px auto;
+    padding:30px 10px;
+    position: relative;
+    background-color: whitesmoke;
+}
+#chat-wrap{
+    /* border: 1pxb solid #eee; */
+    margin: 0 0 15px 0;
+}
+#chat-area{
+    /* height: 600px; */
+    height: 50vh;
+    overflow: auto;
+    /* border:5px solid #666; */
+    padding: 20px;
+    background: whitesmoke;
+}
+#chat-area{
+
+  #name{
+      // display:block;
+      color: black;
+      // font-weight: bold;
+      font-size: 17px;
+      /* background: #333; */
+      padding: 5px 0px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 8px;
+      margin: 5px 0px ;
+  }
+  #time {
+    color: grey;
+    font-size: 12px;
+  }
+  .text {
+      display: block;
+      width:auto;
+      padding: 7px 10px;
+      margin:10px;
+      // border-bottom: 1px solid white;
+      color: black;
+      background-color: rgba(173,216,230,.3);
+      border-radius: 5px;
+  }
+}
 
 #name-area{
-  color:white;
+    position: absolute;
+    top: 12px;
+    right: 0;
+    font: bold 12px "Lucida Grande", Sans-Serif;
+    text-align: right;
+    span{
+        color: #fa9f00;
+      }
+}
+
+#send-message-area{
+   p{
+      color: black;
+      padding-top: 27px;
+      font-size: 14px;
+      border-top: 5px solid white;
+      border-radius: 10px;
+  }
+}
+#sendie{
+    width: 100%;
+    padding: 10px;
+    font: 15px "Lucida Grande", Sans-Serif;
+}
+
+//===============================================
+//Players List
+.players-list{
+
+  .inner-container{
+
+    .title{
+
+    }
+    .players{
+        overflow: auto;
+        background-color: white;
+        height: 75%;
+        width:100%;
+        margin: 20px auto;
+        .player{
+          color:black;
+          display:block;
+          border:1px solid whitesmoke;
+          font-size: 25px;
+          padding:10px;
+      }
+    }
+  }
 }

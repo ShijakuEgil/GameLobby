@@ -1,16 +1,12 @@
 <?php
-session_start();
 include('header.php');?>
-
-<body onload="setInterval('chat.update()', 1000)">
-
-<?php get_navbar(); //display the navbar after login?>
+<body>
+<?php get_navbar(); //display the navbar after login
+?>
 
 <script type="text/javascript">
-    // ask user for name with popup prompt
-    // var name = prompt("Enter your chat name:", "Guest");
+
     var name = $('#username-text').text();
-    // alert('check1');
   // strip tags
   name = name.replace(/(<([^>]+)>)/ig,"");
 
@@ -22,8 +18,7 @@ include('header.php');?>
   $(function(){
 
      chat.getState();
-     // alert('check2');
-     // watch textarea for key presses
+     //watch textarea for key presses
          $("#sendie").keydown(function(event) {
 
              var key = event.which;
@@ -44,58 +39,87 @@ include('header.php');?>
 
         if (e.keyCode == 13) {
 
-                var text = $(this).val();
-        var maxLength = $(this).attr("maxlength");
-                var length = text.length;
+          var text = $(this).val();
+          var maxLength = $(this).attr("maxlength");
+          var length = text.length;
 
-                // send
-                if (length <= maxLength + 1) {
-
-              chat.send(text, name);
-              $(this).val("");
-
-                } else {
-
+          // send
+          if (length <= maxLength + 1) {
+            chat.send(text, name);
+            $(this).val("");
+          }
+          else {
           $(this).val(text.substring(0, maxLength));
+          }
         }
-      }
-         });
+      });
   });
 
   jQuery(document).ready(function($){
+    $('[data-toggle="popover"]').popover();
+
     var username = $('#username-text').text();
-    chat.join(username);
-
-
+    // alert(username);
+    chat.join('join');
+    setInterval('chat.update()', 1000);
   });
 </script>
-<!-- <div class="lobby-box container-fluid row no-gutters"> -->
+<div class="row lobby-box no-gutters">
 
-    <!-- <div class="col-xs-3 players-list">
-        <h1>testing</h1>
-    </div> -->
+    <div class="col-3 players-list">
+      <div class="inner-container">
+        <h1 class="title">PLAYERS</h1>
 
-    <div id="page-wrap" class="col-xs-5 chat-container">
+        <div class="players" name='players'>
+        <?php $player_list = get_players_list();
 
-        <h2 class="text-success">Welcome to Game Loby, <?php echo $_SESSION['username']; ?></h2>
+          foreach($player_list as $players):?>
+          <?php if( $players['status'] == 'T'):  $badge = 'badge-success'; ?>
+          <?php elseif( $players['status'] == 'G'):$badge = 'badge-warning'; ?>
+          <?php elseif( $players['status'] == 'F'):$badge = 'badge-secondary'; ?>
+          <?php endif; ?>
 
-        <p id="name-area"></p>
+          <a id="user"
+             class="player" href="#"
+             title="<?php echo $players['uName'];?>"
+             data-toggle="popover"
+             data-placement="bottom"
+             data-trigger="hover"
+             data-html="true"
+             data-content="<h1>TESTING</h1><?php echo 'test with php'; ?>">
+             <span id="username" class="badge badge-pill <?php echo $badge; ?>"><?php echo $players['uName']; ?></span>
+          </a>
 
-        <div id="chat-wrap">
-          <div id="chat-area">
+        <?php endforeach; ?>
 
-          </div>
+      </div>
+      </div>
+    </div>
+
+    <div id="page-wrap" class="col-6 chat-container">
+
+      <h2 class="text-success">Welcome to Game Loby, <?php the_uname(); ?></h2>
+
+      <p id="name-area"></p>
+
+      <div id="chat-wrap">
+        <div id="chat-area">
+
         </div>
+      </div>
 
-        <form id="send-message-area">
-            <p>Your message: </p>
-            <textarea id="sendie" maxlength = '100' ></textarea>
-        </form>
+      <form id="send-message-area">
+          <p>Your message: </p>
+          <textarea class="form-control" id="sendie" maxlength = '400' ></textarea>
+      </form>
 
     </div><!--char-container-->
 
-    <!-- <div class="col-xs-3 games-list">
-        <h1>testing</h1>
-    </div> -->
-<!-- </div> -->
+
+    <div class="col-3 games-list">
+      <div class="inner-container container-fluid">
+        <h1 class="title">GAMES</h1>
+      </div>
+    </div>
+</div>
 <?php include('footer.php'); ?>
