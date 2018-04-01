@@ -42,7 +42,6 @@
             && validate_password($password, $errorMsgPass)
             && validate_email($email, $errorMsgEmail)){
               //Name and Password can be check against DB
-              // $isRegistered = addUser($username, $password, $email);
               $isRegistered = add_user($username, $password, $email);
 
               if($isRegistered){

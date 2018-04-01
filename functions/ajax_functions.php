@@ -1,5 +1,6 @@
 <?php
 require_once('database_functions.php');
+require_once('session_variables.php');
 
 $function = $_POST['function'];
 
@@ -8,15 +9,10 @@ switch ($function) {
     $players = get_players_list();
     echo json_encode( $players );
     break;
-    case 'get_status_count':
-      if( get_status_count() ){
-        return 1;
-      }
-      elseif( !get_status_count() ){
-        return 0;
-      }
 
-
-
+  case 'get_status_count':
+    $f_count = get_status_count();
+    $curr_count = get_session_count();
+    echo json_encode( $f_count );
     break;
 }

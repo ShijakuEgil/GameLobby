@@ -7,7 +7,7 @@
 require_once('db_connection.php');
 require('session_variables.php');
 
-//Verify the user log in
+//Tested and debugged
 function verify_user($username, $password){
   global $db_db;
   $password = sha1($username . $password);
@@ -28,6 +28,7 @@ function verify_user($username, $password){
   }
 }
 
+//tested and debugged
 function set_user_status($status, $username){
   global $db_db;
   $query1 = 'UPDATE users SET status = :status
@@ -39,7 +40,7 @@ function set_user_status($status, $username){
   $statement1->closeCursor();
 }
 
-// add a new user in the database
+//Tested and debbuged
 function add_user($username, $password, $email){
   global $db_db;
   //username needs to be unique
@@ -77,9 +78,10 @@ function logout_user($username){
   $statement->execute();
 }
 
+//returns a list of players
 function get_players_list(){
   global $db_db;
-  $query = "SELECT * FROM users  ORDER BY `users`.`status` DESC";
+  $query = "SELECT * FROM users  ORDER BY status DESC";
   $statement = $db_db->prepare($query);
   $statement->execute();
   $results = $statement->fetchAll();
@@ -87,23 +89,15 @@ function get_players_list(){
   return $results;
 }
 
-function get_player_history($uid){
 
-}
-
+// TODO: not tested still under development
 function get_status_count(){
   global $db_db;
-  $query = "SELECT COUNT(*) FROM users  WHERE 'status' = 'F'";
+  $query = "SELECT * FROM users  WHERE status = :status";
   $statement = $db_db->prepare($query);
+  $statement->bindValue(':status', 'F');
   $statement->execute();
-  $results = $statement->fetchColumn();
+  $results = $statement->rowcount();
   $statement->closeCursor();
-
-    if(get_count() === $results){
-      return 0;
-    }
-    else{
-      set_count( $results );
-      return 1;
-    }
+  return $results;
   }

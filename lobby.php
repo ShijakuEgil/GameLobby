@@ -56,10 +56,9 @@ include('header.php');?>
   });
 
   jQuery(document).ready(function($){
-    $('[data-toggle="popover"]').popover();
-
-    var username = $('#username-text').text();
-    // alert(username);
+    // console.log(name);
+    // $('[data-toggle="popover"]').popover();
+    // var username = $('#username-text').text();
     chat.join('join');
     setInterval('chat.update()', 1000);
   });

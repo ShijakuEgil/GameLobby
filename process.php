@@ -57,14 +57,14 @@
 
      }
      break;
-      case('join'):
+      case 'join':
         $username = $_POST['nickname'];
         fwrite(fopen('chat.txt', 'a'), '<small class="text-info">'.$username.' has joined the lobby.</small>' ."\n");
       break;
 
-    case('leave'):
+    case 'leave':
       $username = $_POST['nickname'];
-      fwrite(fopen('chat.txt', 'a'), '<small class="text-danger">'.$username.' has left the lobby.</small>' ."\n");
+      fwrite(fopen($_SERVER['DOCUMENT_ROOT'].'chat.txt', 'a'), '<small class="text-warning">'.$username.' has left the lobby.</small>' ."\n");
     break;
   }
     echo json_encode($log);

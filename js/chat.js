@@ -12,6 +12,7 @@ function Chat() {
 
 //gets the state of the chat
 function getStateOfChat(){
+  console.log('getstateofchat');
 	if(!instanse){
             instanse = true;
             $.ajax({
@@ -28,6 +29,7 @@ function getStateOfChat(){
 
 //Updates the chat
 function updateChat(){
+  console.log('updateChat');
 	 if(!instanse){
 		 instanse = true;
 	     $.ajax({
@@ -76,40 +78,45 @@ function sendChat(message, nickname)
 
 // notify other users that you have joined the lobby
 function notifyChat(func){
-  var username = $('#username-text').text();
+  console.log(func);
+  console.log(name);
   updateChat();
   $.ajax({
     type: 'POST',
     url:  'process.php',
     data: {
                       'function': func,
-                      'nickname': username,
+                      'nickname': name,
                       'file': file
 
     },
     dataType: 'json',
+    error: function(status){
+      console.log('error');
+      console.log(status);
+    },
     success: function(data){
+      console.log(data);
       updateChat();
     },
   });
 }
-
-function leave_lobby(){
-  var username = $('#username-text').text();
-  updateChat();
-  $.ajax({
-    type: 'POST',
-    url:  'process.php',
-    data: {
-                      'function': 'leave',
-                      'nickname': username,
-                      'file': file
-
-    },
-    dataType: 'json',
-    success: function(data){
-      updateChat();
-
-    },
-  });
-}
+//
+// function leave_lobby(){
+//   var username = $('#username-text').text();
+//   updateChat();
+//   $.ajax({
+//     type: 'POST',
+//     url:  'process.php',
+//     data: {
+//                       'function': 'leave',
+//                       'nickname': username,
+//                       'file': file
+//
+//     },
+//     dataType: 'json',
+//     success: function(data){
+//       updateChat();
+//     },
+//   });
+// }

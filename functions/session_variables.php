@@ -2,11 +2,12 @@
 session_start();
 
 function set_variables($username){
+
   global $db_db;
   $query = "SELECT UID, status FROM users
             WHERE uName = :username LIMIT 1";
   $statement = $db_db->prepare($query);
-  // $statement->bindValue(':username', $username);
+
   $params = array(
     'username' => $username,
   );
@@ -15,7 +16,7 @@ function set_variables($username){
   $_SESSION['UID'] = $results['UID'];
   $_SESSION['status'] = $results['status'];
   $_SESSION['uName'] = $username;
-  $_SESSION['count'] = 0;
+  $_SESSION['FCount'] = 0;
 }
 
 function get_id(){
@@ -36,11 +37,11 @@ function get_uname(){
 function the_uname(){
    echo $_SESSION['uName'];
 }
-function get_count(){
-  return $_SESSION['count'];
+function get_session_count(){
+  return $_SESSION['FCount'];
 }
-function set_count($var){
-  $_SESSION['count'] = $var;
+function set_session_count($var){
+  $_SESSION['FCount'] = $var;
 }
 
 function destroy_session(){

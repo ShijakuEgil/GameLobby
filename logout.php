@@ -1,4 +1,5 @@
 <?php
+//tested and working
 require_once('functions/db_connection.php');
 require_once('functions/database_functions.php');
 require_once('functions/session_variables.php');
