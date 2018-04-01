@@ -1,11 +1,22 @@
 <?php
-require_once('functions/db_functions.php');
-session_start();
+require_once('database_functions.php');
+
 $function = $_POST['function'];
-$usename = $_POST['uname'];
+
 switch ($function) {
-  case 'db_logOut_user':
-      db_logOut_user($usename);
+  case 'players':
+    $players = get_players_list();
+    echo json_encode( $players );
+    break;
+    case 'get_status_count':
+      if( get_status_count() ){
+        return 1;
+      }
+      elseif( !get_status_count() ){
+        return 0;
+      }
+
+
+
     break;
 }
- ?>

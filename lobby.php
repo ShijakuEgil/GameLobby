@@ -71,28 +71,25 @@ include('header.php');?>
         <h1 class="title">PLAYERS</h1>
 
         <div class="players" name='players'>
-        <?php $player_list = get_players_list();
+          <div class="players-container">
+          <!-- <?php //$player_list = get_players_list();
 
-          foreach($player_list as $players):?>
-          <?php if( $players['status'] == 'T'):  $badge = 'badge-success'; ?>
-          <?php elseif( $players['status'] == 'G'):$badge = 'badge-warning'; ?>
-          <?php elseif( $players['status'] == 'F'):$badge = 'badge-secondary'; ?>
-          <?php endif; ?>
+          //foreach($player_list as $players):?>
+          <?php //if( $players['status'] == 'T'):  $badge = 'badge-success'; ?>
+          <?php //elseif( $players['status'] == 'G'):$badge = 'badge-warning'; ?>
+          <?php// elseif( $players['status'] == 'F'):$badge = 'badge-secondary'; ?>
+          <?php //endif; ?>
 
-          <a id="user"
-             class="player" href="#"
-             title="<?php echo $players['uName'];?>"
-             data-toggle="popover"
-             data-placement="bottom"
-             data-trigger="hover"
-             data-html="true"
-             data-content="<h1>TESTING</h1><?php echo 'test with php'; ?>">
-             <span id="username" class="badge badge-pill <?php echo $badge; ?>"><?php echo $players['uName']; ?></span>
+          <a  id="user" class="player badge <?php //echo $badge; ?>" href="#">
+              <?php //echo $players['uName']; ?>
+              <div class="user-history">
+
+              </div>
           </a>
 
-        <?php endforeach; ?>
-
-      </div>
+          <?php //endforeach; ?> -->
+          </div>
+        </div>
       </div>
     </div>
 
@@ -110,7 +107,7 @@ include('header.php');?>
 
       <form id="send-message-area">
           <p>Your message: </p>
-          <textarea class="form-control" id="sendie" maxlength = '400' ></textarea>
+          <textarea class="form-control" id="sendie" maxlength = '500' ></textarea>
       </form>
 
     </div><!--char-container-->

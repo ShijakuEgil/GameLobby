@@ -190,6 +190,7 @@ h2{
 
 //===============================================
 //Players List
+
 .players-list{
 
   .inner-container{
@@ -199,16 +200,28 @@ h2{
     }
     .players{
         overflow: auto;
-        background-color: white;
         height: 75%;
         width:100%;
         margin: 20px auto;
+
         .player{
-          color:black;
+          position: relative;
+          color:whitesmoke;
           display:block;
-          border:1px solid whitesmoke;
-          font-size: 25px;
+          border:5px solid whitesmoke;
+          font-size: 20px;
           padding:10px;
+          margin:5px 40px;
+          border-radius: 10px;
+
+          .user-history{
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:50vw;
+            background-color: black;
+          }
       }
     }
   }

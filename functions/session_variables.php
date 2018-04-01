@@ -15,10 +15,7 @@ function set_variables($username){
   $_SESSION['UID'] = $results['UID'];
   $_SESSION['status'] = $results['status'];
   $_SESSION['uName'] = $username;
-  // $verify =$username . $results['UID'];
-  // $_SESSION['verify'] = $verify;
-  // $id =  $results['UID'];
-  // $_SESSION[ 'echo $id' . 'uName'] = $username;
+  $_SESSION['count'] = 0;
 }
 
 function get_id(){
@@ -39,12 +36,12 @@ function get_uname(){
 function the_uname(){
    echo $_SESSION['uName'];
 }
-// function get_verify(){
-//    return  $_SESSION['verify'];
-// }
-// function the_verify(){
-//   echo $_SESSION['verify'];
-// }
+function get_count(){
+  return $_SESSION['count'];
+}
+function set_count($var){
+  $_SESSION['count'] = $var;
+}
 
 function destroy_session(){
 

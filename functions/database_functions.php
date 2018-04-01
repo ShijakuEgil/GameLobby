@@ -1,10 +1,11 @@
 <?php
 /*
     @author Egil Shijaku
-    Theme: GameLobby
+    @package: GameLobby
     Functions for communicationg with databse
 */
 require_once('db_connection.php');
+require('session_variables.php');
 
 //Verify the user log in
 function verify_user($username, $password){
@@ -38,10 +39,9 @@ function set_user_status($status, $username){
   $statement1->closeCursor();
 }
 
-// add a new user in the databasez
+// add a new user in the database
 function add_user($username, $password, $email){
   global $db_db;
-
   //username needs to be unique
   $query = 'SELECT uName FROM users
             WHERE uName = :username';
@@ -70,9 +70,7 @@ function add_user($username, $password, $email){
 
 function logout_user($username){
   global $db_db ;
-
   //find the username in the database and set its status to 'F'
-
   $query = "UPDATE users SET status = 'F'
             WHERE uName = $username";
   $statement = $db_db->prepare($query);
@@ -92,3 +90,20 @@ function get_players_list(){
 function get_player_history($uid){
 
 }
+
+function get_status_count(){
+  global $db_db;
+  $query = "SELECT COUNT(*) FROM users  WHERE 'status' = 'F'";
+  $statement = $db_db->prepare($query);
+  $statement->execute();
+  $results = $statement->fetchColumn();
+  $statement->closeCursor();
+
+    if(get_count() === $results){
+      return 0;
+    }
+    else{
+      set_count( $results );
+      return 1;
+    }
+  }

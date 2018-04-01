@@ -1,5 +1,5 @@
 <?php
-function get_header(){
+function get_header_scripts(){
 ?>
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="css/normalize.css">
@@ -14,7 +14,7 @@ function get_header(){
 }
 
 
-function get_footer(){
+function get_footer_scripts(){
   ?>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
   <script type="text/javascript" src="js/scripts.js"></script>
@@ -37,7 +37,6 @@ function get_navbar(){
        </div>
        <div class="user-thumbnail">
          <h3 class="text-dark"><?php echo $_SESSION['uName']; ?>
-           <!-- <span class="badge badge-pill badge-secondary"></span> -->
            <span class="dropleft show">
               <a class="btn btn-secondary btn-sm" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="icon ion-android-person text-success"></i>

@@ -20,7 +20,6 @@
       $username = filter_input(INPUT_POST, 'username');
       $password = filter_input(INPUT_POST, 'password');
       // Name and Password can be check against DB
-      // $isAuthenticated = authenticateAccount($username, $password);
       $isAuthenticated = verify_user($username, $password);
          // If they are a valid user, take them to Lobby
       if($isAuthenticated){
